@@ -14,3 +14,4 @@ Automating the building and pushing parts of working with GVMI images
 ## Requirements:
  - Must be on a 'main' branch.
  - Must have a Dockerfile at the root of your repository.
+ - Install the Skynet dependency: `pip install siaskynet`
