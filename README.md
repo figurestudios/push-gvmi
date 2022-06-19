@@ -7,7 +7,7 @@ Automating the building and pushing parts of working with GVMI images
 
  - Then, create your [/.github/workflows/push-gvmi.yml](https://github.com/figurestudios/push-gvmi/blob/main/.github/workflows/push-gvmi.yml) file.
  - Optionally change these lines {[20](https://github.com/figurestudios/push-gvmi/blob/main/.github/workflows/push-gvmi.yml#L20), [22](https://github.com/figurestudios/push-gvmi/blob/main/.github/workflows/push-gvmi.yml#L22), [23](https://github.com/figurestudios/push-gvmi/blob/main/.github/workflows/push-gvmi.yml#L23), [25](https://github.com/figurestudios/push-gvmi/blob/main/.github/workflows/push-gvmi.yml#L25)} to give the Docker image a more fitting name.
- - Now change the skylink on [this line](https://github.com/figurestudios/push-gvmi/blob/main/get-parse_hash.py#L5) to the marked text below, taken from the workflow's successful run. This skylink will never change, so you just need to do it when you create your new project.
+ - Now change the skylink on [this line](https://github.com/figurestudios/push-gvmi/blob/main/get-parse_hash.py#L5) to the marked text below, taken from the workflow's successful run (navigate [here](https://github.com/figurestudios/push-gvmi/actions) & click the top one). This skylink will never change, so you just need to do it when you create your new project.
 ![image](https://user-images.githubusercontent.com/64747030/174495407-960f9937-ca8c-4abf-abe9-85e51fdf83c5.png)
  - `line[line.find('link ')+5:]` on [line 12](https://github.com/figurestudios/push-gvmi/blob/main/get-parse_hash.py#L12) is your image hash. Feel free to use this directly in your project.
 
