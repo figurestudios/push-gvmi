@@ -10,7 +10,7 @@ async def get_hash():
     async with aiofiles.open('push', mode='r') as f:
         async for line in f:
             if re.search("hash link", line):
-                return str(line[line.find('link ')+5:][:-1]) # HERE'S OUR IMAGE_HASH
+                return str(line[line.find('link ')+5:].strip()) # HERE'S OUR IMAGE_HASH
 
     # IF NOT FOUND, EXIT
     print("Could not parse hash from push file")
