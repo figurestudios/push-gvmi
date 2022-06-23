@@ -1,12 +1,19 @@
 import siaskynet as skynet
 import re
+import aiofiles
 
-client = skynet.SkynetClient()
-skylink = "AAAxbSSDj4GcPcCcWGk0mhqxbHY-Btkuq8FGixOtKBzuyA" # HERE'S OUR SKYLINK
+async def get_hash():
+    client = skynet.SkynetClient()
+    skylink = "AAAxbSSDj4GcPcCcWGk0mhqxbHY-Btkuq8FGixOtKBzuyA" # HERE'S OUR SKYLINK
+    client.download_file("./push", skylink)
+    
+    async with aiofiles.open('push', mode='r') as f:
+        async for line in f:
+            if re.search("hash link", line):
+                return str(line[line.find('link ')+5:].strip()) # HERE'S OUR IMAGE_HASH
 
-client.download_file("./push", skylink)
+    # IF NOT FOUND, EXIT
+    print("Could not parse hash from push file")
+    exit()
 
-with open("push","r") as file:
-    for line in file:
-        if re.search("hash link", line):
-            print(line[line.find('link ')+5:]) # HERE'S OUR IMAGE_HASH
+print(await get_hash()) # PRINTS OUR HASH
