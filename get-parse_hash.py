@@ -16,4 +16,4 @@ async def get_hash():
     print("Could not parse hash from push file")
     exit()
 
-print(await get_hash) # PRINTS OUR HASH
+print(await get_hash()) # PRINTS OUR HASH
